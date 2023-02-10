@@ -1,0 +1,21 @@
+{
+   "evs"
+   "Teachername":"RahulYadav",
+   "Batchname":"Alpha","Beta","Gama",
+       "FirstName":"Sneha", 
+       "LastName":"Yadav",
+       "Date of birth":"3/7/1997",
+       "Age":"25",
+       
+       "Addresh" : [
+       "VillageName:Ajoshi",
+       "District:Jaunpur",
+       "State:Up",
+       "Pincode:222161"
+      ],
+      
+       "HighSchool Pass":2014,
+       "Intermediate Pass":2016,
+       "B.com Pass":2019,
+       "M.com Pass":2021
+       }
