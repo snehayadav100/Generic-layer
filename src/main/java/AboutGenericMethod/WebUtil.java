@@ -7,8 +7,6 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.Set;
 
-import javax.swing.text.Element;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.OutputType;
@@ -20,11 +18,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.model.Log;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.google.common.io.Files;
 
@@ -33,6 +31,14 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class WebUtil {
 	private WebDriver driver = null;
 
+	
+	
+	
+	/**
+	 *    for java doc =(alt + Shift+ j)
+	 * 
+	 * @param browername
+	 */
 	public void Browerlaunch(String browername) {
 		
 		try {
@@ -53,6 +59,9 @@ public class WebUtil {
 
 	}
 
+	/**
+	 * @param url
+	 */
 	public void forURLhit(String url) {
 		try {
 			driver.get(url);
@@ -66,6 +75,11 @@ public class WebUtil {
 		}
 	}
 
+	/**
+	 * @param locatorName
+	 * @param locatorValue
+	 * @param elementName
+	 */
 	public void sizeOfElement(String locatorName, String locatorValue, String elementName) {
 		try {
 			WebElement element = searchElement(locatorName, locatorValue);
@@ -80,6 +94,17 @@ public class WebUtil {
 
 	}
 
+	/**
+	 * 
+	 * 
+	 * 
+	 * 
+	 * @param locatortype
+	 * @param locatorvalue
+	 * @param elememntName
+	 * @param required_x_cordinate
+	 * @param required_Y_cordinate
+	 */
 	public void valildateLocation(String locatortype, String locatorvalue, String elememntName,
 			int required_x_cordinate, int required_Y_cordinate) {
 		// TODO Auto-generated method stub
@@ -113,7 +138,7 @@ public class WebUtil {
 			int actual_height = objDimension.getHeight();
 			int actual_width = objDimension.getWidth();
 			if (required_height == actual_height) {
-				test.log(Status.PASS, elememntName + " height verified!");
+				test.log(Status.PASS, elememntName +actual_height+ " height verified!"+required_height);
 			} else {
 				test.log(Status.FAIL, elememntName + " height mismatched with expected value!");
 			}
